@@ -1,0 +1,35 @@
+﻿@model LABII.Dominio.persona
+@{
+    ViewData["Title"] = "Save";
+}
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<div class="animate__animated animate__backInDown justify-content-center ">
+
+
+    @using (Html.BeginForm("Save", "Home", FormMethod.Post))
+    {
+
+        @Html.LabelFor(m => m.NombrePersona, new { @Class = "" })
+        @Html.TextBoxFor(m => m.NombrePersona, new { @Class = "form-control" })
+        @Html.ValidationMessageFor(m => m.NombrePersona, null, new { @class = "text-danger" })
+        <br />
+        @Html.LabelFor(m => m.EdadPersona)
+        @Html.TextBoxFor(m => m.EdadPersona, new { @Class = "form-control ", type = "number" })
+        @Html.ValidationMessageFor(m => m.EdadPersona, null, new { @class = "text-danger" })
+        <br />
+        @Html.LabelFor(m => m.DescripcionPersona)
+        @Html.TextBoxFor(m => m.DescripcionPersona, new { @Class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DescripcionPersona, null, new { @class = "text-danger" })
+        <br />
+        
+        <div class="text-md-center"><i class="far fa-save fa-x7"></i><br /><input class="btn btn-dark" type="submit" value="Guardar"/></div>
+
+    }
+
+</div>
+@section scripts{
+    <script src="https://kit.fontawesome.com/c7b6e5d378.js" crossorigin="anonymous"></script>
+}
+
+
